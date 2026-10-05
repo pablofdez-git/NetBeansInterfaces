@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.ej05contadorpalabras.gui;
+package com.mycompany.jradiobutton.gui;
 
 /**
  *
@@ -28,63 +28,71 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txa_inputPalabras = new javax.swing.JTextArea();
-        btn_contador = new javax.swing.JButton();
-        lbl_palabras = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        btg_preguntaUno = new javax.swing.ButtonGroup();
+        jrb_optA = new javax.swing.JRadioButton();
+        jrb_optB = new javax.swing.JRadioButton();
+        jrb_optC = new javax.swing.JRadioButton();
+        btn_continuar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        txa_inputPalabras.setColumns(20);
-        txa_inputPalabras.setRows(5);
-        jScrollPane1.setViewportView(txa_inputPalabras);
+        btg_preguntaUno.add(jrb_optA);
+        jrb_optA.setText("Opcion A");
+        jrb_optA.addActionListener(this::jrb_optAActionPerformed);
 
-        btn_contador.setText("Contar Palabras");
-        btn_contador.addActionListener(this::btn_contadorActionPerformed);
+        btg_preguntaUno.add(jrb_optB);
+        jrb_optB.setText("Opcion B");
 
-        lbl_palabras.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_palabras.setText("Palabras Introducidas: 0");
+        btg_preguntaUno.add(jrb_optC);
+        jrb_optC.setText("Opcion C");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setText("Contador de Palabras");
+        btn_continuar.setText("Continuar");
+        btn_continuar.addActionListener(this::btn_continuarActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(147, 147, 147)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(btn_contador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbl_palabras, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
-                    .addComponent(jLabel1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jrb_optA)
+                    .addComponent(jrb_optB)
+                    .addComponent(jrb_optC)
+                    .addComponent(btn_continuar))
+                .addContainerGap(170, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jrb_optA)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jrb_optB)
                 .addGap(18, 18, 18)
-                .addComponent(lbl_palabras)
-                .addGap(34, 34, 34)
-                .addComponent(btn_contador)
-                .addGap(38, 38, 38))
+                .addComponent(jrb_optC)
+                .addGap(29, 29, 29)
+                .addComponent(btn_continuar)
+                .addContainerGap(89, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_contadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_contadorActionPerformed
-        String texto = txa_inputPalabras.getText();
-        int palabras = texto.split("\\s+").length;
-        txa_inputPalabras.setText("");
-        lbl_palabras.setText("Palabras Introducidas: "+palabras);
-    }//GEN-LAST:event_btn_contadorActionPerformed
+    private void jrb_optAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrb_optAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jrb_optAActionPerformed
+
+    private void btn_continuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_continuarActionPerformed
+        if(jrb_optA.isSelected()){
+            System.out.println("Opcion A");
+        }else if(jrb_optB.isSelected()){
+            System.out.println("Opcion B");
+        }else if(jrb_optC.isSelected()){
+            System.out.println("Opcion C");
+        }
+        btg_preguntaUno.clearSelection();
+    }//GEN-LAST:event_btn_continuarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -112,10 +120,10 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_contador;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lbl_palabras;
-    private javax.swing.JTextArea txa_inputPalabras;
+    private javax.swing.ButtonGroup btg_preguntaUno;
+    private javax.swing.JButton btn_continuar;
+    private javax.swing.JRadioButton jrb_optA;
+    private javax.swing.JRadioButton jrb_optB;
+    private javax.swing.JRadioButton jrb_optC;
     // End of variables declaration//GEN-END:variables
 }

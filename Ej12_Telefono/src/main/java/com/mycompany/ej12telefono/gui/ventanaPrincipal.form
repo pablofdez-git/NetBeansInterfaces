@@ -28,6 +28,7 @@
               <Group type="103" groupAlignment="2" attributes="0">
                   <Component id="ftf_numTelefono" alignment="2" min="-2" pref="119" max="-2" attributes="0"/>
                   <Component id="btn_validar" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbl_validar" alignment="2" min="-2" pref="102" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="148" max="32767" attributes="0"/>
           </Group>
@@ -36,11 +37,13 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
-              <Component id="ftf_numTelefono" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+              <Component id="lbl_validar" min="-2" pref="20" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="ftf_numTelefono" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Component id="btn_validar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="133" max="32767" attributes="0"/>
+              <EmptySpace pref="149" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -49,7 +52,7 @@
     <Component class="javax.swing.JFormattedTextField" name="ftf_numTelefono">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-          <Format format="+34 ### ### ###" subtype="-1" type="5"/>
+          <Format format="+34 ### ## ## ##" subtype="-1" type="5"/>
         </Property>
       </Properties>
     </Component>
@@ -60,6 +63,12 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_validarActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_validar">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="2"/>
+        <Property name="text" type="java.lang.String" value="&#xbf;Es v&#xe1;lido?"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

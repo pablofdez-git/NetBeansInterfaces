@@ -30,17 +30,21 @@ public class ventanaPrincipal extends javax.swing.JFrame {
 
         ftf_numTelefono = new javax.swing.JFormattedTextField();
         btn_validar = new javax.swing.JButton();
+        lbl_validar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         try {
-            ftf_numTelefono.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("+34 ### ### ###")));
+            ftf_numTelefono.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("+34 ### ## ## ##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
         btn_validar.setText("Validar");
         btn_validar.addActionListener(this::btn_validarActionPerformed);
+
+        lbl_validar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lbl_validar.setText("¿Es válido?");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -50,23 +54,35 @@ public class ventanaPrincipal extends javax.swing.JFrame {
                 .addGap(133, 133, 133)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(ftf_numTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_validar))
+                    .addComponent(btn_validar)
+                    .addComponent(lbl_validar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(148, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(104, 104, 104)
+                .addGap(50, 50, 50)
+                .addComponent(lbl_validar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(ftf_numTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_validar)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap(149, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_validarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_validarActionPerformed
+        String tlf = ftf_numTelefono.getText();
+        ftf_numTelefono.setValue("");
+        
+        if (tlf.matches("\\+34\\s\\d{3}\\s\\d{2}\\s\\d{2}\\s\\d{2}")){
+           lbl_validar.setText("¿Es válida? SI");
+        } else {
+            lbl_validar.setText("¿Es válida? No");
+        }
+        
         
     }//GEN-LAST:event_btn_validarActionPerformed
 
@@ -98,5 +114,6 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_validar;
     private javax.swing.JFormattedTextField ftf_numTelefono;
+    private javax.swing.JLabel lbl_validar;
     // End of variables declaration//GEN-END:variables
 }

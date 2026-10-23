@@ -4,6 +4,8 @@
  */
 package com.mycompany.ej12telefono.gui;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Alumno
@@ -79,8 +81,10 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         
         if (tlf.matches("\\+34\\s\\d{3}\\s\\d{2}\\s\\d{2}\\s\\d{2}")){
            lbl_validar.setText("¿Es válida? SI");
+           JOptionPane.showMessageDialog(this, "Telefono válido: "+tlf);
         } else {
             lbl_validar.setText("¿Es válida? No");
+            JOptionPane.showMessageDialog(this, "Telefono no válido. Deben ser 9 digitos y empezar por 6,7,8 o 9", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
         
         
